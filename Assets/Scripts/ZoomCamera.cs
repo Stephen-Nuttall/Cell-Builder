@@ -8,7 +8,8 @@ public class ZoomCamera : MonoBehaviour
 
     void Update()
     {
-        Camera.main.orthographicSize += Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+        Camera.main.orthographicSize -= Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+        
         if (Camera.main.orthographicSize < minZoom)
         {
             Camera.main.orthographicSize = minZoom;
