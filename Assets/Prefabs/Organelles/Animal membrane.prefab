@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7873775661161807146}
   - component: {fileID: 2807417788396491527}
   - component: {fileID: 7698788295025357943}
+  - component: {fileID: 2568837911842651067}
+  - component: {fileID: 4136825726268109472}
   m_Layer: 0
   m_Name: Animal membrane
   m_TagString: Untagged
@@ -415,3 +417,45 @@ PolygonCollider2D:
       - {x: -0.35999998, y: -3.905}
       - {x: -0.37, y: -3.895}
   m_UseDelaunayMesh: 0
+--- !u!114 &2568837911842651067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532457940106452597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4136825726268109472}
+          m_TargetAssemblyTypeName: Organelle, Assembly-CSharp
+          m_MethodName: OrganelleClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &4136825726268109472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532457940106452597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrganellePanelUI: {fileID: 0}

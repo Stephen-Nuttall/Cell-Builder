@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7724245327473666502}
   - component: {fileID: 1873528806094733411}
   - component: {fileID: 2897496500486234798}
+  - component: {fileID: 4441148155403059412}
+  - component: {fileID: 531988764158677776}
   m_Layer: 0
   m_Name: Nucleoid
   m_TagString: Untagged
@@ -309,3 +311,44 @@ PolygonCollider2D:
       - {x: -0.049999997, y: 0.97999996}
       - {x: -0.06, y: 0.98999995}
   m_UseDelaunayMesh: 0
+--- !u!114 &4441148155403059412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5409098821616407389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 531988764158677776}
+          m_TargetAssemblyTypeName: Organelle, Assembly-CSharp
+          m_MethodName: OrganelleClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &531988764158677776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5409098821616407389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
