@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1680888587694516283}
   - component: {fileID: 2236332932242446393}
   - component: {fileID: 8513107722444513984}
-  - component: {fileID: -6596172854760612302}
   - component: {fileID: -2717155213160651754}
+  - component: {fileID: -1553220141719666455}
   m_Layer: 0
   m_Name: Mitochondrion
   m_TagString: Untagged
@@ -141,18 +141,6 @@ PolygonCollider2D:
       - {x: 0.21, y: 0}
       - {x: 0.02, y: 0.19999999}
   m_UseDelaunayMesh: 0
---- !u!114 &-6596172854760612302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4421779708383977957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-2717155213160651754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +158,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -6596172854760612302}
+        - m_Target: {fileID: -1553220141719666455}
           m_TargetAssemblyTypeName: Organelle, Assembly-CSharp
           m_MethodName: OrganelleClick
           m_Mode: 1
@@ -182,3 +170,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &-1553220141719666455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421779708383977957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c6ce1a736eb854287af91529dd529a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orgName: Mitochondrion
+  description: DESCRIBE THIS ORGANELLE.
+  level: 1
+  resourceProduced: 2
+  productionAmount: 10
+  productionRate: 1
+  maxCapacity: 500
+  running: 1

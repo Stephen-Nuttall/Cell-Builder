@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class Organelle : MonoBehaviour
 {
-    GameObject OrganellePanel;
+    [SerializeField] string orgName = "ORGANELLE";
+    [SerializeField] string description = "DESCRIBE THIS ORGANELLE.";
+    [SerializeField] protected int level = 1;
+    OrganellePanel organellePanel;
 
     void Awake()
     {
-        OrganellePanel = GameObject.Find("Organelle Panel");
+        organellePanel = FindFirstObjectByType<OrganellePanel>(FindObjectsInactive.Include);
     }
 
     public void OrganelleClick()
     {
-        OrganellePanel.SetActive(true);
+        organellePanel.gameObject.SetActive(true);
+        organellePanel.DisplayOrganelleInfo(this);
     }
+
+    public string GetName() { return orgName; }
+    public string GetDescription() { return description; }
+    public int GetLevel() { return level; }
 }

@@ -3100,8 +3100,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1390290119}
+  m_Children: []
   m_Father: {fileID: 1069929096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3324,7 +3323,7 @@ MonoBehaviour:
   menuPanel: {fileID: 27705713}
   titleTextbox: {fileID: 2136745309}
   startContinueButtonTextbox: {fileID: 466998227}
-  gameTitleText: Cell Game
+  gameTitleText: Cell Builder
   pauseScreenText: Paused
   startButtonText: Start
   continueButtonText: Continue
@@ -3558,8 +3557,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1357830938}
+  m_Children: []
   m_Father: {fileID: 1069929096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -5782,9 +5780,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 680358766}
+  - {fileID: 1357830938}
   - {fileID: 686172932}
   - {fileID: 1198860378}
   - {fileID: 637552575}
+  - {fileID: 1390290119}
   - {fileID: 423612964}
   - {fileID: 988311316}
   - {fileID: 1887895058}
@@ -5845,6 +5845,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83328646319470c478a1ecad50f2f631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 680358767}
+  descriptionText: {fileID: 1887895059}
+  orgIcon: {fileID: 686172933}
+  levelText: {fileID: 1198860379}
+  resourceText: {fileID: 637552576}
+  productionText: {fileID: 423612965}
+  collectButton: {fileID: 1390290120}
 --- !u!1 &1101614011
 GameObject:
   m_ObjectHideFlags: 0
@@ -7313,17 +7320,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357830937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1048107075}
-  m_Father: {fileID: 680358766}
+  m_Father: {fileID: 1069929096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: 12.5}
+  m_AnchoredPosition: {x: 322.5, y: 502.5}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1357830939
@@ -7521,17 +7528,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390290118}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 396311785}
-  m_Father: {fileID: 637552575}
+  m_Father: {fileID: 1069929096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 525, y: 0}
+  m_AnchoredPosition: {x: 550, y: 185}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1390290120
@@ -7627,6 +7634,7 @@ GameObject:
   - component: {fileID: 1492484203}
   - component: {fileID: 1492484205}
   - component: {fileID: 1492484204}
+  - component: {fileID: 1492484206}
   m_Layer: 5
   m_Name: Resources Panel
   m_TagString: Untagged
@@ -7698,6 +7706,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492484202}
   m_CullTransparentMesh: 1
+--- !u!114 &1492484206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492484202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478101427792d854188c577dbd326292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DNAText: {fileID: 464506125}
+  ProteinText: {fileID: 53499082}
+  ATPText: {fileID: 819919129}
+  totalDNA: 0
+  totalProtein: 0
+  totalATP: 0
+  maxDNA: 1000
+  maxProtein: 1000
+  maxATP: 1000
 --- !u!1 &1500913891
 GameObject:
   m_ObjectHideFlags: 0
@@ -10103,7 +10132,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 800, y: 150}
+  m_SizeDelta: {x: 1500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136745309
 MonoBehaviour:
@@ -10125,7 +10154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CELL GAME
+  m_text: CELL BUILDER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

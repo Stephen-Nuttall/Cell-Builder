@@ -325,3 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orgName: Cell Membrane and Wall
+  description: DESCRIBE THIS ORGANELLE.
+  level: 1

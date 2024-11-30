@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 361729153428033042}
   - component: {fileID: 319294478005494223}
   - component: {fileID: 2466175807813019473}
-  - component: {fileID: -2793148623141122390}
   - component: {fileID: 2001243741751457701}
+  - component: {fileID: 987089147686668036}
   m_Layer: 0
   m_Name: Nucleus
   m_TagString: Untagged
@@ -149,18 +149,6 @@ PolygonCollider2D:
       - {x: 0.41, y: -0.089999996}
       - {x: 0.41, y: 0.14999999}
   m_UseDelaunayMesh: 0
---- !u!114 &-2793148623141122390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7511518337569999265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2001243741751457701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +166,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -2793148623141122390}
+        - m_Target: {fileID: 987089147686668036}
           m_TargetAssemblyTypeName: Organelle, Assembly-CSharp
           m_MethodName: OrganelleClick
           m_Mode: 1
@@ -190,3 +178,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &987089147686668036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7511518337569999265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c6ce1a736eb854287af91529dd529a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orgName: Nucleus
+  description: DESCRIBE THIS ORGANELLE.
+  level: 1
+  resourceProduced: 0
+  productionAmount: 10
+  productionRate: 1
+  maxCapacity: 500
+  running: 1
