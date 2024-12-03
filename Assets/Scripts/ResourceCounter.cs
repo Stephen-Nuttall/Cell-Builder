@@ -41,75 +41,116 @@ public class ResourceCounter : MonoBehaviour
         };
     }
 
-    public void AddResources(ResourceType resourceType, float amountToAdd)
+    public bool AddResources(ResourceType resourceType, float amountToAdd)
     {
-        if (amountToAdd <= 0)
-            return;
-
-        switch (resourceType)
+        if (amountToAdd == 0)
         {
-            case ResourceType.DNA:
-                totalDNA += amountToAdd;
-                if (totalDNA > maxDNA)
-                    totalDNA = maxDNA;
-                break;
-            case ResourceType.Protein:
-                totalProtein += amountToAdd;
-                if (totalProtein > maxProtein)
-                    totalProtein = maxProtein;
-                break;
-            case ResourceType.ATP:
-                totalATP += amountToAdd;
-                if (totalATP > maxATP)
-                    totalATP = maxATP;
-                break;
+            return true;
         }
+        else if (amountToAdd < 0)
+        {
+            return false;
+        }
+        else
+        {
+            switch (resourceType)
+            {
+                case ResourceType.DNA:
+                    totalDNA += amountToAdd;
+                    if (totalDNA > maxDNA)
+                        totalDNA = maxDNA;
+                    break;
+                case ResourceType.Protein:
+                    totalProtein += amountToAdd;
+                    if (totalProtein > maxProtein)
+                        totalProtein = maxProtein;
+                    break;
+                case ResourceType.ATP:
+                    totalATP += amountToAdd;
+                    if (totalATP > maxATP)
+                        totalATP = maxATP;
+                    break;
+            }
 
-        UpdateResourceDisplay();
+            UpdateResourceDisplay();
+            return true;
+        }
     }
 
-    public void SpendResources(ResourceType resourceType, float amountToSpend)
+    public bool SpendResources(ResourceType resourceType, float amountToSpend)
     {
-        if (amountToSpend >= 0)
-            return;
-
-        switch (resourceType)
+        if (amountToSpend == 0)
         {
-            case ResourceType.DNA:
-                if (totalDNA - amountToSpend >= 0)
-                    totalDNA -= amountToSpend;
-                break;
-            case ResourceType.Protein:
-                if (totalProtein - amountToSpend >= 0)
-                    totalProtein -= amountToSpend;
-                break;
-            case ResourceType.ATP:
-                if (totalATP - amountToSpend >= 0)
-                    totalATP -= amountToSpend;
-                break;
+            return true;
         }
+        else if (amountToSpend < 0)
+        {
+            return false;
+        }
+        else
+        {
+            switch (resourceType)
+            {
+                case ResourceType.DNA:
+                    if (totalDNA - amountToSpend >= 0)
+                    {
+                        totalDNA -= amountToSpend;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    break;
+                case ResourceType.Protein:
+                    if (totalProtein - amountToSpend >= 0)
+                    {
+                        totalProtein -= amountToSpend;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    break;
+                case ResourceType.ATP:
+                    if (totalATP - amountToSpend >= 0)
+                    {
+                        totalATP -= amountToSpend;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    break;
+            }
 
-        UpdateResourceDisplay();
+            UpdateResourceDisplay();
+            return true;
+        }
     }
 
-    public void IncreaseMaxResources(ResourceType resourceType, float amountToAdd)
+    public bool IncreaseMaxResources(ResourceType resourceType, float amountToAdd)
     {
         if (amountToAdd <= 0)
-            return;
-
-        switch (resourceType)
         {
-            case ResourceType.DNA:
-                maxDNA += amountToAdd;
-                break;
-            case ResourceType.Protein:
-                maxProtein += amountToAdd;
-                break;
-            case ResourceType.ATP:
-                maxATP += amountToAdd;
-                break;
+            return false;
         }
+        else
+        {
+            switch (resourceType)
+            {
+                case ResourceType.DNA:
+                    maxDNA += amountToAdd;
+                    break;
+                case ResourceType.Protein:
+                    maxProtein += amountToAdd;
+                    break;
+                case ResourceType.ATP:
+                    maxATP += amountToAdd;
+                    break;
+            }
 
-        UpdateResourceDisplay();
+            UpdateResourceDisplay();
+            return true;
+        }
     }
 }

@@ -199,7 +199,9 @@ MonoBehaviour:
   description: DESCRIBE THIS ORGANELLE.
   level: 1
   resourceProduced: 1
-  productionAmount: 10
+  productionAmount: 1
   productionRate: 1
   maxCapacity: 500
+  ATPUseRate: 2
   running: 1
+  autoCollectResources: 1

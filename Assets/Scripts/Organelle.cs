@@ -18,6 +18,11 @@ public class Organelle : MonoBehaviour
         organellePanel.DisplayOrganelleInfo(this);
     }
 
+    public virtual void LevelUp()
+    {
+        level += 1;
+    }
+
     public string GetName() { return orgName; }
     public string GetDescription() { return description; }
     public int GetLevel() { return level; }

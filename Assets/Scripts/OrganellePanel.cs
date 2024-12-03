@@ -46,11 +46,22 @@ public class OrganellePanel : MonoBehaviour
         {
             resourceText.enabled = true;
             productionText.enabled = true;
-            collectButton.gameObject.SetActive(true);
 
-            resourceText.text = producer.GetResourceType() + ": " + producer.GetStoredAmount() + "/" + producer.GetMaxCapacity();
+
             productionText.text = producer.GetProductionRate();
-            collectButton.onClick.AddListener(producer.CollectResources);
+
+            if (!producer.IsAutoCollectEnabled())
+            {
+                resourceText.text = producer.GetResourceType() + ": " + producer.GetStoredAmount() + "/" + producer.GetMaxCapacity();
+
+                collectButton.gameObject.SetActive(true);
+                collectButton.onClick.AddListener(producer.CollectResources);
+            }
+            else
+            {
+                resourceText.text = producer.GetResourceType();
+                collectButton.gameObject.SetActive(false);
+            }
         }
         else
         {

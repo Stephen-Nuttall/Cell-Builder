@@ -185,9 +185,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c6ce1a736eb854287af91529dd529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orgName: ORGANELLE
+  description: DESCRIBE THIS ORGANELLE.
   level: 1
   resourceProduced: 2
-  productionAmount: 10
-  productionRate: 1
+  productionAmount: 2
+  productionRate: 2
   maxCapacity: 500
+  ATPUseRate: 0
   running: 1
+  autoCollectResources: 1

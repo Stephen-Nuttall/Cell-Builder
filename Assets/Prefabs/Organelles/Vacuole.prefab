@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4916906168229535812}
   - component: {fileID: 7593836865494145484}
   - component: {fileID: -5507875665634345306}
-  - component: {fileID: -7817888740846545186}
+  - component: {fileID: 1823941116308357562}
   m_Layer: 0
   m_Name: Vacuole
   m_TagString: Untagged
@@ -169,7 +169,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -7817888740846545186}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Organelle, Assembly-CSharp
           m_MethodName: OrganelleClick
           m_Mode: 1
@@ -181,7 +181,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &-7817888740846545186
+--- !u!114 &1823941116308357562
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,9 +190,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5609573457710578820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e0a3f87140400b4c94a0df14c4def95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Vacuole
   description: DESCRIBE THIS ORGANELLE.
   level: 1
+  maxDNAIncreaseBase: 250
+  maxProteinIncreaseBase: 250
+  maxATPIncreaseBase: 250
+  maxDNALevelMult: 0.25
+  maxProteinLevelMult: 0.25
+  maxATPLevelMult: 0.25
