@@ -5,9 +5,11 @@ public class ResourceProducer : Organelle
 {
     [SerializeField] ResourceType resourceProduced;
     [SerializeField] float productionAmount = 10f;
-    [SerializeField] float productionRate = 1f;
+    [SerializeField] float productionRate = 1f;  // in seconds.
     [SerializeField] float maxCapacity = 500f;
     [SerializeField] float ATPUseRate = 5f;
+    [SerializeField] float wasteProductionAmount = 1f;
+    [SerializeField] float maxWasteProductionRateMult = 0.25f;
     [SerializeField] bool running = true;
     [SerializeField] bool autoCollectResources = true;
     float storedAmount;
@@ -23,14 +25,35 @@ public class ResourceProducer : Organelle
     {
         while (running)
         {
-            if ((storedAmount + productionAmount <= maxCapacity) && resourceCounter.SpendResources(ResourceType.ATP, ATPUseRate))
+            // If there's capacity for more resources to be stored and there's ATP that can be spent, generate resources.
+            if ((storedAmount < maxCapacity) && resourceCounter.SpendResources(ResourceType.ATP, ATPUseRate))
             {
-                storedAmount += productionAmount;
+                // If the cell is above the waste limit, slow production. Otherwise, produce the normal amount of resources.
+                if (parentCell.IsAboveWasteLimit())
+                {
+                    storedAmount += productionAmount * maxWasteProductionRateMult;
+                }
+                else
+                {
+                    storedAmount += productionAmount;
+                }
+
+                // If autocollect is enabled (it is by default), collect resources.
                 if (autoCollectResources)
                 {
                     CollectResources();
                 }
+
+                // If we've exceeded the maximum resource capacity for our cell, remove the extra amount off the top.
+                if (storedAmount > maxCapacity)
+                {
+                    storedAmount = maxCapacity;
+                }
+
+                parentCell.AddWaste(wasteProductionAmount);
             }
+
+            // wait until next cycle
             yield return new WaitForSeconds(productionRate);
         }
     }

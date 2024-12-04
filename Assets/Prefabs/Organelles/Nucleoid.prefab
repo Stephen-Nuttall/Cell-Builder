@@ -360,5 +360,7 @@ MonoBehaviour:
   productionRate: 2
   maxCapacity: 500
   ATPUseRate: 0
+  wasteProductionAmount: 0
+  maxWasteProductionRateMult: 1
   running: 1
   autoCollectResources: 1

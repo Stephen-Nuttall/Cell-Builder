@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CellPanel : MonoBehaviour
 {
-    [SerializeField] Button EvolveButton;
+    [SerializeField] GameObject organellePanel;
+    [SerializeField] Button evolveButton;
     bool evolveToggle = false;
+
     void Start()
     {
         gameObject.SetActive(false);
@@ -16,15 +16,16 @@ public class CellPanel : MonoBehaviour
     public void OnCellClick()
     {
         gameObject.SetActive(true);
+        organellePanel.SetActive(false);
     }
 
     public void OnEvolveClick()
     {
-        TextMeshProUGUI buttonText = EvolveButton.GetComponentInChildren<TextMeshProUGUI>();
-        Image buttonImage = EvolveButton.GetComponent<Image>();
+        TextMeshProUGUI buttonText = evolveButton.GetComponentInChildren<TextMeshProUGUI>();
+        Image buttonImage = evolveButton.GetComponent<Image>();
         evolveToggle = !evolveToggle;
 
-        if (evolveToggle) 
+        if (evolveToggle)
         {
             buttonText.text = "Evolve";
             buttonImage.color = Color.green;
@@ -41,4 +42,8 @@ public class CellPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void DisplayCellInfo()
+    {
+        //
+    }
 }
