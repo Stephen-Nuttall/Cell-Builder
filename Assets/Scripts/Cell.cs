@@ -14,6 +14,8 @@ public class Cell : MonoBehaviour
     [SerializeField] GameObject warningBubble;
     float totalWaste = 0;
 
+    [SerializeField] GameObject[] organelles;
+
     void Start()
     {
         warningBubble.SetActive(false);
