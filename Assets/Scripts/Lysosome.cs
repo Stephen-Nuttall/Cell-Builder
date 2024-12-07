@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Lysosome : Organelle
 {
+    [Header("Lysosome Info")]
     [SerializeField] float wasteRemovalAmount = 1f;
     [SerializeField] float wasteRemovalRate = 0.25f;
     [SerializeField] float ATPUseRate = 1f;

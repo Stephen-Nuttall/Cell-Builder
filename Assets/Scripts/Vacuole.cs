@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Vacuole : Organelle
 {
+    [Header("Vacuole Info")]
     [SerializeField] float maxDNAIncreaseBase = 500;
     [SerializeField] float maxProteinIncreaseBase = 500;
     [SerializeField] float maxATPIncreaseBase = 500;

@@ -4,19 +4,22 @@ using TMPro;
 
 public class CellPanel : MonoBehaviour
 {
+    [SerializeField] TMP_Text cellName;
+
     [SerializeField] GameObject organellePanel;
     [SerializeField] Button evolveButton;
     bool evolveToggle = false;
+    BuildPanel buildPanel;
+    Cell displayedCell;
+
+    void Awake()
+    {
+        buildPanel = FindFirstObjectByType<BuildPanel>(FindObjectsInactive.Include);
+    }
 
     void Start()
     {
         gameObject.SetActive(false);
-    }
-
-    public void OnCellClick()
-    {
-        gameObject.SetActive(true);
-        organellePanel.SetActive(false);
     }
 
     public void OnEvolveClick()
@@ -42,8 +45,16 @@ public class CellPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void DisplayCellInfo()
+    public void DisplayCellInfo(Cell cellInfo)
     {
-        //
+        displayedCell = cellInfo;
+        cellName.text = cellInfo.GetName();
+    }
+
+    public void DisplayBuildMenu()
+    {
+        buildPanel.gameObject.SetActive(true);
+        buildPanel.DisplayOrganelles(displayedCell.GetOrganelles());
+        gameObject.SetActive(false);
     }
 }

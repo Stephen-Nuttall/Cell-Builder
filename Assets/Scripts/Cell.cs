@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum CellEvolution { Bacteria, Plant, Animal }
@@ -14,11 +15,28 @@ public class Cell : MonoBehaviour
     [SerializeField] GameObject warningBubble;
     float totalWaste = 0;
 
-    [SerializeField] GameObject[] organelles;
+    List<Organelle> organelles = new();
 
     void Start()
     {
         warningBubble.SetActive(false);
+        FindOrganelles(gameObject.transform);
+    }
+
+    void FindOrganelles(Transform parent)
+    {
+        for (int i = 0; i < parent.transform.childCount; i++)
+        {
+            Transform child = parent.transform.GetChild(i);
+            if (child.TryGetComponent<Organelle>(out var org))
+            {
+                organelles.Add(org);
+            }
+            else if (child.childCount > 0)
+            {
+                FindOrganelles(child); // recurrsion to find any nested children organelles
+            }
+        }
     }
 
     public bool AddWaste(float amount)
@@ -84,4 +102,5 @@ public class Cell : MonoBehaviour
     public float GetCurrentWaste() { return totalWaste; }
     public float GetWasteLimit() { return wasteLimit; }
     public float GetMaxWaste() { return maxWaste; }
+    public List<Organelle> GetOrganelles() { return organelles; }
 }

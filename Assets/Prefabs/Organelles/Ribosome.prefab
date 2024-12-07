@@ -210,7 +210,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orgName: Ribosome
   description: DESCRIBE THIS ORGANELLE.
+  buildDescription: This is what this organelle does and why you should build more
+    of it in your cell.
   level: 1
+  cellLevelUnlockedAt: 1
+  unlocked: 1
+  buildResource: 0
+  upgradeResource: 1
+  buildCost: 10
+  upgradeCost: 250
+  upgradeCostLevelMult: 2
   resourceProduced: 1
   productionAmount: 1
   productionRate: 3

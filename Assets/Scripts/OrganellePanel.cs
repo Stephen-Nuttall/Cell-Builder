@@ -13,6 +13,12 @@ public class OrganellePanel : MonoBehaviour
     [SerializeField] Button collectButton;
 
     Organelle displayedOrganelle;
+    CellPanel cellPanel;
+
+    void Awake()
+    {
+        cellPanel = FindFirstObjectByType<CellPanel>(FindObjectsInactive.Include);
+    }
 
     void Start()
     {
@@ -30,6 +36,13 @@ public class OrganellePanel : MonoBehaviour
     public void OnExitClick()
     {
         collectButton.onClick.RemoveAllListeners();
+        gameObject.SetActive(false);
+    }
+
+    public void DisplayCellMenu()
+    {
+        cellPanel.gameObject.SetActive(true);
+        cellPanel.DisplayCellInfo(displayedOrganelle.GetParentCell());
         gameObject.SetActive(false);
     }
 

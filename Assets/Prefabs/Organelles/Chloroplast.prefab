@@ -187,11 +187,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orgName: ORGANELLE
   description: DESCRIBE THIS ORGANELLE.
+  buildDescription: This is what this organelle does and why you should build more
+    of it in your cell.
   level: 1
+  cellLevelUnlockedAt: 1
+  unlocked: 1
+  buildResource: 0
+  upgradeResource: 1
+  buildCost: 50
+  upgradeCost: 250
+  upgradeCostLevelMult: 2
   resourceProduced: 2
   productionAmount: 2
   productionRate: 2
   maxCapacity: 500
   ATPUseRate: 0
+  wasteProductionAmount: 1
+  maxWasteProductionRateMult: 0.25
   running: 1
   autoCollectResources: 1

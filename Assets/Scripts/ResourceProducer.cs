@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ResourceProducer : Organelle
 {
+    [Header("Resource Production Info")]
     [SerializeField] ResourceType resourceProduced;
     [SerializeField] float productionAmount = 10f;
     [SerializeField] float productionRate = 1f;  // in seconds.
