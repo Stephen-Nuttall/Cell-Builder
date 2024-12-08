@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 319294478005494223}
   - component: {fileID: 2466175807813019473}
   - component: {fileID: 2001243741751457701}
+  - component: {fileID: -2925975090024279538}
   - component: {fileID: 987089147686668036}
   m_Layer: 0
   m_Name: Nucleus
@@ -166,7 +167,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 987089147686668036}
+        - m_Target: {fileID: -2925975090024279538}
           m_TargetAssemblyTypeName: Organelle, Assembly-CSharp
           m_MethodName: OrganelleClick
           m_Mode: 1
@@ -178,6 +179,33 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &-2925975090024279538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7511518337569999265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orgName: Nucleus
+  description: DESCRIBE THIS ORGANELLE.
+  buildDescription: This is what this organelle does and why you should build more
+    of it in your cell.
+  level: 1
+  cellLevelUnlockedAt: 1
+  unlocked: 1
+  buildResource: 0
+  upgradeResource: 1
+  buildCost: 100
+  upgradeCost: 250
+  upgradeCostLevelMult: 2
+  onLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &987089147686668036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,13 +218,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c6ce1a736eb854287af91529dd529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orgName: Nucleus
-  description: DESCRIBE THIS ORGANELLE.
-  level: 1
   resourceProduced: 0
   productionAmount: 1
   productionRate: 0.75
   maxCapacity: 500
   ATPUseRate: 4
+  wasteProductionAmount: 1
+  maxWasteProductionRateMult: 0.25
   running: 1
   autoCollectResources: 1

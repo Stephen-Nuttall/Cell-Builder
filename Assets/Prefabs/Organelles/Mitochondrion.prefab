@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2236332932242446393}
   - component: {fileID: 8513107722444513984}
   - component: {fileID: -2717155213160651754}
+  - component: {fileID: 5907356442813483225}
   - component: {fileID: -1553220141719666455}
   m_Layer: 0
   m_Name: Mitochondrion
@@ -158,7 +159,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -1553220141719666455}
+        - m_Target: {fileID: 5907356442813483225}
           m_TargetAssemblyTypeName: Organelle, Assembly-CSharp
           m_MethodName: OrganelleClick
           m_Mode: 1
@@ -170,7 +171,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &-1553220141719666455
+--- !u!114 &5907356442813483225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4421779708383977957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52c6ce1a736eb854287af91529dd529a, type: 3}
+  m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Mitochondrion
@@ -194,6 +195,21 @@ MonoBehaviour:
   buildCost: 75
   upgradeCost: 250
   upgradeCostLevelMult: 2
+  onLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-1553220141719666455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421779708383977957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c6ce1a736eb854287af91529dd529a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   resourceProduced: 2
   productionAmount: 1
   productionRate: 0.25

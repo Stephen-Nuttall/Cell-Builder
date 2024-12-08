@@ -189,6 +189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ribosome
       objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: orgBuilt
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8300063616070165591, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.37
@@ -423,6 +427,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golgi Apparatus
       objectReference: {fileID: 0}
+    - target: {fileID: 6104338938216010914, guid: d7005cce910e0cc4c9654ca85ae68824, type: 3}
+      propertyPath: orgBuilt
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -555,6 +563,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mitochondrion
       objectReference: {fileID: 0}
+    - target: {fileID: 5907356442813483225, guid: 97049c0671d8f2649bd178fde0a91fd6, type: 3}
+      propertyPath: unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907356442813483225, guid: 97049c0671d8f2649bd178fde0a91fd6, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -576,6 +592,14 @@ PrefabInstance:
     - target: {fileID: 3297012347046426566, guid: 0860ab101aa10934899b56cd93a1c3f0, type: 3}
       propertyPath: m_Name
       value: Chloroplast
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362055657167196761, guid: 0860ab101aa10934899b56cd93a1c3f0, type: 3}
+      propertyPath: unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362055657167196761, guid: 0860ab101aa10934899b56cd93a1c3f0, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7690723428750780657, guid: 0860ab101aa10934899b56cd93a1c3f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -748,6 +772,14 @@ PrefabInstance:
     - target: {fileID: 4421779708383977957, guid: 97049c0671d8f2649bd178fde0a91fd6, type: 3}
       propertyPath: m_Name
       value: Mitochondrion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907356442813483225, guid: 97049c0671d8f2649bd178fde0a91fd6, type: 3}
+      propertyPath: unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907356442813483225, guid: 97049c0671d8f2649bd178fde0a91fd6, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

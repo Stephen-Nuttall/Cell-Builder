@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Organelle : MonoBehaviour
 {
@@ -8,15 +9,18 @@ public class Organelle : MonoBehaviour
     [SerializeField] string buildDescription = "This is what this organelle does and why you should build more of it in your cell.";
     [SerializeField] protected int level = 1;
     [SerializeField] int cellLevelUnlockedAt = 1;
-    [SerializeField] bool unlocked = true;
+    [SerializeField] bool orgBuilt = true;  // will turn itself off if cell level is less than cellLevelUnlockedAt
     [SerializeField] ResourceType buildResource = ResourceType.DNA;
     [SerializeField] ResourceType upgradeResource = ResourceType.Protein;
     [SerializeField] float buildCost = 100f;
     [SerializeField] float upgradeCost = 250f;
     [SerializeField] float upgradeCostLevelMult = 2f;
+
     OrganellePanel organellePanel;
     protected Cell parentCell;
     Sprite icon;
+
+    public UnityEvent onLevelUp;
 
     void Awake()
     {
@@ -32,12 +36,18 @@ public class Organelle : MonoBehaviour
             Debug.LogError(orgName + "(game object name: " + gameObject.name + ")" + " was not able to find it's parent cell");
         }
 
-        if (!unlocked)
+        if (parentCell.GetLevel() < cellLevelUnlockedAt || !orgBuilt)
         {
+            orgBuilt = false;
             gameObject.SetActive(false);
         }
 
         icon = GetComponent<SpriteRenderer>().sprite;
+    }
+
+    void OnEnable()
+    {
+        orgBuilt = true;
     }
 
     public void OrganelleClick()
@@ -50,6 +60,8 @@ public class Organelle : MonoBehaviour
     {
         level += 1;
         upgradeCost *= upgradeCostLevelMult;
+
+        onLevelUp?.Invoke();
     }
 
     public string GetName() { return orgName; }

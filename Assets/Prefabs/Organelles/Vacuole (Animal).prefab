@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4916906168229535812}
   - component: {fileID: 7593836865494145484}
   - component: {fileID: -5507875665634345306}
+  - component: {fileID: -4686772000931391958}
   - component: {fileID: 1823941116308357562}
   m_Layer: 0
   m_Name: Vacuole (Animal)
@@ -169,7 +170,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1823941116308357562}
+        - m_Target: {fileID: -4686772000931391958}
           m_TargetAssemblyTypeName: Organelle, Assembly-CSharp
           m_MethodName: OrganelleClick
           m_Mode: 1
@@ -181,6 +182,45 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &-4686772000931391958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609573457710578820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orgName: Vacuole
+  description: DESCRIBE THIS ORGANELLE.
+  buildDescription: This is what this organelle does and why you should build more
+    of it in your cell.
+  level: 1
+  cellLevelUnlockedAt: 1
+  unlocked: 1
+  buildResource: 0
+  upgradeResource: 1
+  buildCost: 100
+  upgradeCost: 250
+  upgradeCostLevelMult: 2
+  onLevelUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1823941116308357562}
+        m_TargetAssemblyTypeName: Vacuole, Assembly-CSharp
+        m_MethodName: OnLevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1823941116308357562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,18 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0a3f87140400b4c94a0df14c4def95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orgName: Vacuole
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
-  level: 1
-  cellLevelUnlockedAt: 1
-  unlocked: 1
-  buildResource: 0
-  upgradeResource: 1
-  buildCost: 125
-  upgradeCost: 250
-  upgradeCostLevelMult: 2
   maxDNAIncreaseBase: 250
   maxProteinIncreaseBase: 250
   maxATPIncreaseBase: 250

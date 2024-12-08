@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8300063616070165591, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2
@@ -456,6 +464,14 @@ PrefabInstance:
     - target: {fileID: 2860715469777813712, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: orgBuilt
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: unlocked
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8300063616070165591, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_LocalPosition.x

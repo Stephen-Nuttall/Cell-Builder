@@ -1,18 +1,21 @@
 using System.Collections;
 using UnityEngine;
 
-public class Lysosome : Organelle
+public class Lysosome : MonoBehaviour
 {
-    [Header("Lysosome Info")]
     [SerializeField] float wasteRemovalAmount = 1f;
     [SerializeField] float wasteRemovalRate = 0.25f;
     [SerializeField] float ATPUseRate = 1f;
     [SerializeField] bool running = true;
+
     ResourceCounter resourceCounter;
+    Cell parentCell;
 
     void Start()
     {
         resourceCounter = FindFirstObjectByType<ResourceCounter>();
+        parentCell = GetComponent<Organelle>().GetParentCell();
+
         StartCoroutine(WasteRemovalLoop());
     }
 
