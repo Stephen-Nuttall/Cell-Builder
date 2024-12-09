@@ -829,7 +829,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 216025104}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2041209160}
+        m_TargetAssemblyTypeName: CellPanel, Assembly-CSharp
+        m_MethodName: OnUpgradeClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &216025104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8716,6 +8728,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mitosisHandler: {fileID: 188924135}
   cellName: {fileID: 480830345}
+  cellLevelText: {fileID: 2037016048}
+  cellIcon: {fileID: 691755563}
   organellePanel: {fileID: 0}
   evolveButton: {fileID: 830069385}
   upgradeDNACostText: {fileID: 1604756934}
