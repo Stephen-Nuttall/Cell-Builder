@@ -14,6 +14,7 @@ public class Cell : MonoBehaviour
     [SerializeField] float maxWaste = 150f;
     [SerializeField] GameObject warningBubble;
     float totalWaste = 0;
+    int id = 1;
 
     List<Organelle> organelles = new();
 
@@ -21,16 +22,25 @@ public class Cell : MonoBehaviour
     {
         warningBubble.SetActive(false);
         FindOrganelles(gameObject.transform);
+        id = FindFirstObjectByType<MitosisHandler>().GetCellCount();
+    }
+
+    void OnDisable()
+    {
+        SaveToFile();
     }
 
     void FindOrganelles(Transform parent)
     {
+        organelles = new();
+
         for (int i = 0; i < parent.transform.childCount; i++)
         {
             Transform child = parent.transform.GetChild(i);
             if (child.TryGetComponent<Organelle>(out var org))
             {
                 organelles.Add(org);
+                org.SetID(i);
             }
             else if (child.childCount > 0)
             {
@@ -57,6 +67,8 @@ public class Cell : MonoBehaviour
             {
                 warningBubble.SetActive(false);
             }
+
+            SaveToFile();
             return true;
         }
         else
@@ -87,6 +99,8 @@ public class Cell : MonoBehaviour
             {
                 warningBubble.SetActive(false);
             }
+
+            SaveToFile();
             return true;
         }
         else
@@ -95,12 +109,63 @@ public class Cell : MonoBehaviour
         }
     }
 
+    public void LoadFromFile(SerializedCellData data)
+    {
+        if (data == null)
+        {
+            Debug.LogError("Attempted to load save for this cell, but save data was null. Cell will not be restored.");
+            return;
+        }
+
+        id = data.id;
+        evolution = data.evolution;
+        cellLevel = data.level;
+        totalWaste = data.waste;
+
+        if (data.orgList == null)
+        {
+            Debug.LogError("Attempted to load saves for the organelles in cell #" + id +
+            ", but no organelle saves were found. Organelles in this cell will not be restored.");
+            return;
+        }
+
+        FindOrganelles(gameObject.transform);
+
+        for (int i = 0; i < data.orgList.Count; i++)
+        {
+            if (i >= organelles.Count)
+            {
+                Debug.LogError("Attempted to load save for organelle #" + i + " in cell #" + id
+                + " but that index is out of range of the organelle list for this cell.");
+            }
+            else if (organelles[i] == null)
+            {
+                Debug.LogError("Attempted to load save for organelle #" + i + " in cell #" + id + " but it was not found.");
+            }
+            else if (data.orgList[i] == null)
+            {
+                Debug.LogError("Attempted to load save for organelle #" + i + " in cell #" + id + " but no save for it was found.");
+            }
+            else
+            {
+                organelles[i].LoadFromFile(data.orgList[i]);
+            }
+        }
+    }
+
+    void SaveToFile()
+    {
+        FileReadWrite.WriteCellData(this);
+    }
+
     public string GetName() { return cellName; }
     public string GetDescription() { return description; }
     public int GetLevel() { return cellLevel; }
+    public CellEvolution GetEvolution() { return evolution; }
     public bool IsAboveWasteLimit() { return totalWaste >= wasteLimit; }
     public float GetCurrentWaste() { return totalWaste; }
     public float GetWasteLimit() { return wasteLimit; }
     public float GetMaxWaste() { return maxWaste; }
     public List<Organelle> GetOrganelles() { return organelles; }
+    public int GetID() { return id; }
 }

@@ -1,18 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CellLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Cell startingCell;
+    MitosisHandler mitosisHandler;
+
+    Dictionary<int, SerializedCellData> cellDataByID;
+
+    void Awake()
     {
-        
+        mitosisHandler = FindFirstObjectByType<MitosisHandler>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        SerializedCellData data = FileReadWrite.ReadCellData(1);
+        startingCell.LoadFromFile(data);
     }
 }

@@ -19,6 +19,7 @@ public class Organelle : MonoBehaviour
     OrganellePanel organellePanel;
     protected Cell parentCell;
     Sprite icon;
+    int id;
 
     public UnityEvent onLevelUp;
 
@@ -64,6 +65,30 @@ public class Organelle : MonoBehaviour
         onLevelUp?.Invoke();
     }
 
+    public void LoadFromFile(SerializedOrganelleData data)
+    {
+        if (id != data.id)
+        {
+            Debug.LogError("Failed to save data for " + orgName + " ID: " + id
+            + ". Organelle ID does not match the given save data ID " + data.id
+            + ". Organelle data not recovered and reverted to default.");
+            return;
+        }
+
+        level = data.level;
+        orgBuilt = data.built;
+
+        if (parentCell.GetLevel() < cellLevelUnlockedAt || !orgBuilt)
+        {
+            orgBuilt = false;
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+    }
+
     public string GetName() { return orgName; }
     public string GetDescription() { return description; }
     public string GetBuildDescription() { return buildDescription; }
@@ -75,4 +100,7 @@ public class Organelle : MonoBehaviour
     public ResourceType GetUpgradeResource() { return upgradeResource; }
     public float GetBuildCost() { return buildCost; }
     public float GetUpgradeCost() { return upgradeCost; }
+    public bool IsBuilt() { return orgBuilt; }
+    public int GetID() { return id; }
+    public void SetID(int newID) { id = newID; }
 }

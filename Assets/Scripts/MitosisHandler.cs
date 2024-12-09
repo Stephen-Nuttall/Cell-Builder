@@ -72,6 +72,8 @@ public class MitosisHandler : MonoBehaviour
 
     void CreateCell(CellEvolution cellType)
     {
+        cellCount++;
+
         if (cellType == CellEvolution.Bacteria)
         {
             GameObject bacteriaObject = Instantiate(bacteriaCellPrefab, new Vector3(15 * cellCount, 0, 0), Quaternion.identity);
@@ -84,8 +86,6 @@ public class MitosisHandler : MonoBehaviour
         {
             GameObject animalObject = Instantiate(animalCellPrefab, new Vector3(15 * cellCount, 0, 0), Quaternion.identity);
         }
-
-       cellCount++;
     }
 
     public void ToggleEvolve()
@@ -100,7 +100,7 @@ public class MitosisHandler : MonoBehaviour
 
     bool CanEvolve(float currentDNA, float currentProtein, float currentATP)
     {
-        return currentDNA >= evolveDNACost + mitosisDNACost && currentProtein >= evolveProteinCost + mitosisProteinCost 
+        return currentDNA >= evolveDNACost + mitosisDNACost && currentProtein >= evolveProteinCost + mitosisProteinCost
             && currentATP >= evolveATPCost + mitosisATPCost;
     }
 
@@ -110,4 +110,5 @@ public class MitosisHandler : MonoBehaviour
     public float GetEvolveDNACost() { return evolveDNACost; }
     public float GetEvolveProteinCost() { return evolveProteinCost; }
     public float GetEvolveATPCost() { return evolveATPCost; }
+    public int GetCellCount() { return cellCount; }
 }
