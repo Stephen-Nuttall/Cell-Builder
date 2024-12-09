@@ -12,6 +12,8 @@ public class ResourceProducer : MonoBehaviour
     [SerializeField] float maxWasteProductionRateMult = 0.25f;
     [SerializeField] bool running = true;
     [SerializeField] bool autoCollectResources = true;
+    
+    float productionUpgradeAmountMult = 0.25f;
     float storedAmount;
 
     ResourceCounter resourceCounter;
@@ -103,8 +105,14 @@ public class ResourceProducer : MonoBehaviour
         }
     }
 
+    public void OnLevelUp()
+    {
+        productionAmount += productionAmount * productionUpgradeAmountMult;
+    }
+
     public float GetStoredAmount() { return storedAmount; }
     public float GetMaxCapacity() { return maxCapacity; }
     public string GetProductionRate() { return productionAmount + " " + GetResourceType() + " every " + productionRate + " second(s)"; }
+    public string GetNextProductionRate() { return "+" + productionAmount * productionUpgradeAmountMult + " " + GetResourceType() + " every " + productionRate + " second(s)"; }
     public bool IsAutoCollectEnabled() { return autoCollectResources; }
 }

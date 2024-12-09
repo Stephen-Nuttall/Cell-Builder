@@ -8,6 +8,8 @@ public class Lysosome : MonoBehaviour
     [SerializeField] float ATPUseRate = 1f;
     [SerializeField] bool running = true;
 
+    float wasteUpgradeAmountMult = 0.1f;
+
     ResourceCounter resourceCounter;
     Cell parentCell;
 
@@ -31,4 +33,12 @@ public class Lysosome : MonoBehaviour
             yield return new WaitForSeconds(wasteRemovalRate);
         }
     }
+
+    public void OnLevelUp()
+    {
+        wasteRemovalAmount += wasteRemovalAmount * wasteUpgradeAmountMult;
+    }
+
+    public string GetRemovalRate() { return "Removes " + wasteRemovalAmount + " Waste every " + wasteRemovalRate + " second(s)"; }
+    public string GetNextRemovalRate() { return "+" + wasteRemovalAmount * wasteUpgradeAmountMult + " Waste every " + wasteRemovalRate + " second(s)"; }
 }

@@ -16,7 +16,9 @@ public class Organelle : MonoBehaviour
     [SerializeField] float upgradeCost = 250f;
     [SerializeField] float upgradeCostLevelMult = 2f;
 
+    CellPanel cellPanel;
     OrganellePanel organellePanel;
+    ResourceCounter resourceCounter;
     protected Cell parentCell;
     Sprite icon;
     int id;
@@ -25,10 +27,21 @@ public class Organelle : MonoBehaviour
 
     void Awake()
     {
+        cellPanel = FindFirstObjectByType<CellPanel>(FindObjectsInactive.Include);
+        if (cellPanel == null) // error check
+        {
+            Debug.LogError(orgName + "(game object name: " + gameObject.name + ")" + " was not able to find the cell panel");
+        }
         organellePanel = FindFirstObjectByType<OrganellePanel>(FindObjectsInactive.Include);
         if (organellePanel == null) // error check
         {
             Debug.LogError(orgName + "(game object name: " + gameObject.name + ")" + " was not able to find the organelle panel");
+        }
+
+        resourceCounter = FindFirstObjectByType<ResourceCounter>(FindObjectsInactive.Include);
+        if (resourceCounter == null) // error check
+        {
+            Debug.LogError(orgName + "(game object name: " + gameObject.name + ")" + " was not able to find the resource counter");
         }
 
         parentCell = GetComponentInParent<Cell>(); // does matter if parent, or grandparent, or great grandparent, etc
@@ -53,16 +66,21 @@ public class Organelle : MonoBehaviour
 
     public void OrganelleClick()
     {
+        cellPanel.gameObject.SetActive(false);
         organellePanel.gameObject.SetActive(true);
         organellePanel.DisplayOrganelleInfo(this);
     }
 
-    public virtual void LevelUp()
+    public void TryLevelUp()
     {
-        level += 1;
-        upgradeCost *= upgradeCostLevelMult;
-
-        onLevelUp?.Invoke();
+        float currentProtein = resourceCounter.GetResourceCount(ResourceType.Protein);
+        if (currentProtein >= upgradeCost)
+        {
+            resourceCounter.SpendResources(ResourceType.Protein, upgradeCost);
+            level += 1;
+            upgradeCost *= upgradeCostLevelMult;
+            onLevelUp?.Invoke();
+        }
     }
 
     public void LoadFromFile(SerializedOrganelleData data)
