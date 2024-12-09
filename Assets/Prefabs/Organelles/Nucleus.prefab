@@ -197,7 +197,7 @@ MonoBehaviour:
     of it in your cell.
   level: 1
   cellLevelUnlockedAt: 1
-  unlocked: 1
+  orgBuilt: 1
   buildResource: 0
   upgradeResource: 1
   buildCost: 100
@@ -205,7 +205,19 @@ MonoBehaviour:
   upgradeCostLevelMult: 2
   onLevelUp:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 987089147686668036}
+        m_TargetAssemblyTypeName: ResourceProducer, Assembly-CSharp
+        m_MethodName: OnLevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &987089147686668036
 MonoBehaviour:
   m_ObjectHideFlags: 0

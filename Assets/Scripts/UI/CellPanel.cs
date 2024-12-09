@@ -6,8 +6,13 @@ public class CellPanel : MonoBehaviour
 {
     [SerializeField] MitosisHandler mitosisHandler;
     [SerializeField] TMP_Text cellName;
+    [SerializeField] TMP_Text cellLevelText;
+    [SerializeField] Image cellIcon;
     [SerializeField] GameObject organellePanel;
     [SerializeField] Button evolveButton;
+    [SerializeField] TMP_Text upgradeDNACostText;
+    [SerializeField] TMP_Text upgradeProteinCostText;
+    [SerializeField] TMP_Text upgradeATPCostText;
     [SerializeField] TextMeshProUGUI mitosisCostText;
     [SerializeField] TextMeshProUGUI  mitosisDNACostText;
     [SerializeField] TextMeshProUGUI  mitosisProteinCostText;
@@ -27,7 +32,6 @@ public class CellPanel : MonoBehaviour
         mitosisDNACostText.text = "DNA: " + mitosisHandler.GetMitosisDNACost();
         mitosisProteinCostText.text = "Protein: " + mitosisHandler.GetMitosisDNACost();
         mitosisATPCostText.text = "ATP: " + mitosisHandler.GetMitosisDNACost();
-
     }
 
     public void OnEvolveClick()
@@ -62,6 +66,12 @@ public class CellPanel : MonoBehaviour
         }
     }
 
+    public void OnUpgradeClick()
+    {
+        displayedCell.TryLevelUp();
+        DisplayCellInfo(displayedCell);
+    }
+
     public void OnExitClick()
     {
         gameObject.SetActive(false);
@@ -71,6 +81,12 @@ public class CellPanel : MonoBehaviour
     {
         displayedCell = cellInfo;
         cellName.text = cellInfo.GetName();
+        cellIcon.sprite = cellInfo.gameObject.GetComponent<SpriteRenderer>().sprite;
+
+        cellLevelText.text = "Level: " + cellInfo.GetLevel();
+        upgradeDNACostText.text = "DNA: " + cellInfo.GetUpgradeCost();
+        upgradeProteinCostText.text = "Protein: " + cellInfo.GetUpgradeCost();
+        upgradeATPCostText.text = "ATP: " + cellInfo.GetUpgradeCost();
     }
 
     public void DisplayBuildMenu()

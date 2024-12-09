@@ -9,13 +9,25 @@ public class Cell : MonoBehaviour
     [SerializeField] string description = "DESCRIBE THIS ORGANELLE.";
     [SerializeField] CellEvolution evolution;
     [SerializeField] int cellLevel = 1;
-
+    [SerializeField] float upgradeCost = 250;
     [SerializeField] float wasteLimit = 100f;
     [SerializeField] float maxWaste = 150f;
     [SerializeField] GameObject warningBubble;
-    float totalWaste = 0;
 
+    ResourceCounter resourceCounter;
+    float totalWaste = 0;
     List<Organelle> organelles = new();
+    Sprite icon;
+
+    void Awake()
+    {
+        resourceCounter = FindFirstObjectByType<ResourceCounter>(FindObjectsInactive.Include);
+        if (resourceCounter == null) // error check
+        {
+            Debug.LogError(cellName + "(game object name: " + gameObject.name + ")" + " was not able to find the resource counter");
+        }
+        icon = GetComponent<SpriteRenderer>().sprite;
+    }
 
     void Start()
     {
@@ -95,9 +107,27 @@ public class Cell : MonoBehaviour
         }
     }
 
+    public void TryLevelUp()
+    {
+        float currentDNA = resourceCounter.GetResourceCount(ResourceType.DNA);
+        float currentProtein = resourceCounter.GetResourceCount(ResourceType.Protein);
+        float currentATP = resourceCounter.GetResourceCount(ResourceType.ATP);
+
+        if (currentDNA >= upgradeCost && currentProtein >= upgradeCost && currentATP >= upgradeCost)
+        {
+            resourceCounter.SpendResources(ResourceType.DNA, upgradeCost);
+            resourceCounter.SpendResources(ResourceType.Protein, upgradeCost);
+            resourceCounter.SpendResources(ResourceType.ATP, upgradeCost);
+            
+            cellLevel += 1;
+            upgradeCost *= 2;
+        }
+    }
+
     public string GetName() { return cellName; }
     public string GetDescription() { return description; }
     public int GetLevel() { return cellLevel; }
+    public string GetUpgradeCost() { return upgradeCost.ToString(); }
     public bool IsAboveWasteLimit() { return totalWaste >= wasteLimit; }
     public float GetCurrentWaste() { return totalWaste; }
     public float GetWasteLimit() { return wasteLimit; }
