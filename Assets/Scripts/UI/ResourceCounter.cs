@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 // This enum represents the different types of resources.
 public enum ResourceType { DNA, Protein, ATP }
@@ -17,6 +18,11 @@ public class ResourceCounter : MonoBehaviour
     [SerializeField] float maxDNA;
     [SerializeField] float maxProtein;
     [SerializeField] float maxATP;
+
+    void Awake()
+    {
+        LoadFromFile();
+    }
 
     void Start()
     {
@@ -37,6 +43,17 @@ public class ResourceCounter : MonoBehaviour
             ResourceType.DNA => totalDNA,
             ResourceType.Protein => totalProtein,
             ResourceType.ATP => totalATP,
+            _ => -1,
+        };
+    }
+
+    public float GetResourceMax(ResourceType resourceType)
+    {
+        return resourceType switch
+        {
+            ResourceType.DNA => maxDNA,
+            ResourceType.Protein => maxProtein,
+            ResourceType.ATP => maxATP,
             _ => -1,
         };
     }
@@ -73,6 +90,7 @@ public class ResourceCounter : MonoBehaviour
             }
 
             UpdateResourceDisplay();
+            SaveToFile();
             return true;
         }
     }
@@ -124,6 +142,7 @@ public class ResourceCounter : MonoBehaviour
             }
 
             UpdateResourceDisplay();
+            SaveToFile();
             return true;
         }
     }
@@ -150,7 +169,29 @@ public class ResourceCounter : MonoBehaviour
             }
 
             UpdateResourceDisplay();
+            SaveToFile();
             return true;
         }
+    }
+
+    void LoadFromFile()
+    {
+        SerializedResourceData lastSaveData = FileReadWrite.ReadResourceData();
+
+        if (lastSaveData != null)
+        {
+            totalDNA = lastSaveData.DNA;
+            totalProtein = lastSaveData.protein;
+            totalATP = lastSaveData.ATP;
+
+            maxDNA = lastSaveData.maxDNA;
+            maxProtein = lastSaveData.maxProtein;
+            maxATP = lastSaveData.maxATP;
+        }
+    }
+
+    void SaveToFile()
+    {
+        FileReadWrite.WriteResourceData(this);
     }
 }
