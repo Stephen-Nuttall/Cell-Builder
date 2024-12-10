@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CellLoader : MonoBehaviour
@@ -6,6 +7,8 @@ public class CellLoader : MonoBehaviour
     [SerializeField] GameObject bacteriaCellPrefab;
     [SerializeField] GameObject plantCellPrefab;
     [SerializeField] GameObject animalCellPrefab;
+    [SerializeField] TMP_Text infoText;
+    [SerializeField] GameObject startButton;
     MitosisHandler mitosisHandler;
 
     Dictionary<int, SerializedCellData> cellDataByID;
@@ -17,7 +20,8 @@ public class CellLoader : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; FileReadWrite.CellDataExists(i); i++)
+        int i;
+        for (i = 0; FileReadWrite.CellDataExists(i); i++)
         {
             SerializedCellData data = FileReadWrite.ReadCellData(i);
             GameObject newCell;
@@ -37,6 +41,18 @@ public class CellLoader : MonoBehaviour
 
             newCell.GetComponent<Cell>().LoadFromFile(data);
             mitosisHandler.IncrementCellCount();
+        }
+
+        if (i == 0)
+        {
+            infoText.enabled = true;
+            startButton.SetActive(false);
+            infoText.text = "To load the first save, please place resources.data and the .cell files that came with the zip in this directory:\n" + Application.persistentDataPath;
+        }
+        else
+        {
+            infoText.enabled = false;
+            startButton.SetActive(true);
         }
     }
 }
