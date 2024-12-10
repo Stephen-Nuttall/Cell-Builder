@@ -12,8 +12,7 @@ public class ResourceProducer : MonoBehaviour
     [SerializeField] float maxWasteProductionRateMult = 0.25f;
     [SerializeField] bool running = true;
     [SerializeField] bool autoCollectResources = true;
-    
-    float productionUpgradeAmountMult = 0.25f;
+    [SerializeField] float productionUpgradeAmountMult = 0.25f;
     float storedAmount;
 
     ResourceCounter resourceCounter;

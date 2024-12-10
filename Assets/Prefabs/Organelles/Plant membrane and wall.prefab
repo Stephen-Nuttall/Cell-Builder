@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1440335156510245339}
   - component: {fileID: -3832668475882025274}
   - component: {fileID: 2804611525826100893}
+  - component: {fileID: 7681041271283967320}
   m_Layer: 0
   m_Name: Plant membrane and wall
   m_TagString: Untagged
@@ -584,9 +585,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Cell Membrane and Wall
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
+  description: Cell membranes are selectively permeable, controlling what is allowed
+    in and out. Plants also have cell walls, which provide more structure.
+  buildDescription: Upgrade your cell membrane to increase the amount of organelles
+    your cell can hold.
   level: 1
   cellLevelUnlockedAt: 1
   orgBuilt: 1
@@ -598,3 +600,17 @@ MonoBehaviour:
   onLevelUp:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7681041271283967320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959670404278215787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc53d2627c25b04d81fcea23df63be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxOrganelles: 4
+  increasePerLevel: 2

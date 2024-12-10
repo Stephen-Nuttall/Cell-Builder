@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8374120152981198584}
   - component: {fileID: 447248319660924603}
   - component: {fileID: -1469459460377229660}
+  - component: {fileID: -2209121405408535323}
   m_Layer: 0
   m_Name: Bacteria membrane and wall
   m_TagString: Untagged
@@ -327,9 +328,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Cell Membrane and Wall
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
+  description: Cell membranes are selectively permeable, controlling what is allowed
+    in and out. Most bacteria also have cell walls, which provide more structure.
+  buildDescription: Upgrade your cell membrane to increase the amount of organelles
+    your cell can hold.
   level: 1
   cellLevelUnlockedAt: 1
   orgBuilt: 1
@@ -374,3 +376,18 @@ MonoBehaviour:
   maxWasteProductionRateMult: 0.25
   running: 1
   autoCollectResources: 1
+  productionUpgradeAmountMult: 0.25
+--- !u!114 &-2209121405408535323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724787189478048398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc53d2627c25b04d81fcea23df63be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxOrganelles: 4
+  increasePerLevel: 2

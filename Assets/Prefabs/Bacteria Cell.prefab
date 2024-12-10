@@ -104,7 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellName: Bacteria Cell
-  description: DESCRIBE THIS ORGANELLE.
+  description: Bacteria are small, prokaryotic cells that lack a lot of the features
+    larger cells have.
   evolution: 0
   cellLevel: 1
   upgradeCost: 50

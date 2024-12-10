@@ -192,7 +192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Nucleus
-  description: DESCRIBE THIS ORGANELLE.
+  description: Found in all eukaryotic cells, the nucleus holds the cell's DNA and
+    reads out its instructions to the rest of the cell through RNA.
   buildDescription: This is what this organelle does and why you should build more
     of it in your cell.
   level: 1
@@ -234,8 +235,9 @@ MonoBehaviour:
   productionAmount: 1
   productionRate: 0.75
   maxCapacity: 500
-  ATPUseRate: 2
+  ATPUseRate: 1
   wasteProductionAmount: 1
   maxWasteProductionRateMult: 0.25
   running: 1
   autoCollectResources: 1
+  productionUpgradeAmountMult: 0.25

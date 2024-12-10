@@ -187,9 +187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Chloroplast
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
+  description: Found in plant cells, Chloroplasts are responsible for turning light
+    into energy through photosynthesis.
+  buildDescription: Produces ATP at a steady rate.
   level: 1
   cellLevelUnlockedAt: 1
   orgBuilt: 1
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceProduced: 2
-  productionAmount: 2
+  productionAmount: 4
   productionRate: 2
   maxCapacity: 500
   ATPUseRate: 0
@@ -234,3 +234,4 @@ MonoBehaviour:
   maxWasteProductionRateMult: 0.25
   running: 1
   autoCollectResources: 1
+  productionUpgradeAmountMult: 0.25

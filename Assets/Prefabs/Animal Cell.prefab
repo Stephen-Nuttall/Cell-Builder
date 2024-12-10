@@ -112,7 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellName: Animal Cell
-  description: DESCRIBE THIS ORGANELLE.
+  description: Animal cells are eukaryotic cells that produce energy solely through
+    cellular respiration. They do not have a cell wall, giving them a more flexible
+    shape.
   evolution: 2
   cellLevel: 1
   upgradeCost: 150
@@ -556,6 +558,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6487201842795676374}
     m_Modifications:
+    - target: {fileID: 3146894314882745927, guid: cae5a4c2cb6d85b45804c4c63eb52a67, type: 3}
+      propertyPath: maxOrganelles
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4532457940106452597, guid: cae5a4c2cb6d85b45804c4c63eb52a67, type: 3}
       propertyPath: m_Name
       value: Animal membrane
@@ -836,6 +842,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6487201842795676374}
     m_Modifications:
+    - target: {fileID: -4686772000931391958, guid: d0105bd47aeb9da448bb3f998f0a13bc, type: 3}
+      propertyPath: orgBuilt
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4686772000931391958, guid: d0105bd47aeb9da448bb3f998f0a13bc, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1823941116308357562, guid: d0105bd47aeb9da448bb3f998f0a13bc, type: 3}
       propertyPath: unlocked
       value: 0

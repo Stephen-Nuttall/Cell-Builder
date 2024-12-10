@@ -15,11 +15,12 @@ public class Cell : MonoBehaviour
     [SerializeField] GameObject warningBubble;
 
     ResourceCounter resourceCounter;
+    List<Organelle> organelles = new();
+    CellMembrane cellMembrane;
+    Sprite icon;
+
     float totalWaste = 0;
     int cellNum;
-
-    List<Organelle> organelles = new();
-    Sprite icon;
 
     void Awake()
     {
@@ -57,6 +58,10 @@ public class Cell : MonoBehaviour
             {
                 organelles.Add(org);
                 org.SetID(i);
+                if (child.TryGetComponent<CellMembrane>(out var cellMem))
+                {
+                    cellMembrane = cellMem;
+                }
             }
             else if (child.childCount > 0)
             {
@@ -188,6 +193,25 @@ public class Cell : MonoBehaviour
     void SaveToFile()
     {
         FileReadWrite.WriteCellData(this);
+    }
+
+    public int GetMaxOrganelles()
+    {
+        return cellMembrane.GetMaxOrg() + cellMembrane.GetIncreasePerLevel() * (cellMembrane.gameObject.GetComponent<Organelle>().GetLevel() - 1);
+    }
+
+    public int GetNumOrganellesBuilt()
+    {
+        int count = 0;
+        foreach (Organelle org in organelles)
+        {
+            if (org.IsBuilt())
+            {
+                count++;
+            }
+        }
+
+        return count;
     }
 
     public void SetCellNumToLatest() { cellNum = FindFirstObjectByType<MitosisHandler>().GetCellCount(); }

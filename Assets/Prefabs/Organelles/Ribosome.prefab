@@ -210,9 +210,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Ribosome
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
+  description: Ribosomes play an important role in protein synthesis, translating
+    instructions encoded in mRNA into proteins.
+  buildDescription: Slowly produces protein, but without any need for ATP.
   level: 1
   cellLevelUnlockedAt: 1
   orgBuilt: 1
@@ -257,3 +257,4 @@ MonoBehaviour:
   maxWasteProductionRateMult: 1
   running: 1
   autoCollectResources: 1
+  productionUpgradeAmountMult: 0.25

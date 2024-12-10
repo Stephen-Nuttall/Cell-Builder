@@ -195,9 +195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Small Vacuole
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
+  description: Vacuoles in animal cells are used to store nutrients, harmful substances,
+    and other molecules, as well as help in mitosis.
+  buildDescription: Increases the amount of DNA, protein, and ATP you can store.
   level: 1
   cellLevelUnlockedAt: 1
   orgBuilt: 1

@@ -7,6 +7,7 @@ public class CellPanel : MonoBehaviour
     [SerializeField] MitosisHandler mitosisHandler;
     [SerializeField] TMP_Text cellName;
     [SerializeField] TMP_Text cellLevelText;
+    [SerializeField] TMP_Text cellDescription;
     [SerializeField] Image cellIcon;
     [SerializeField] GameObject organellePanel;
     [SerializeField] Button evolveButton;
@@ -14,9 +15,9 @@ public class CellPanel : MonoBehaviour
     [SerializeField] TMP_Text upgradeProteinCostText;
     [SerializeField] TMP_Text upgradeATPCostText;
     [SerializeField] TextMeshProUGUI mitosisCostText;
-    [SerializeField] TextMeshProUGUI  mitosisDNACostText;
-    [SerializeField] TextMeshProUGUI  mitosisProteinCostText;
-    [SerializeField] TextMeshProUGUI  mitosisATPCostText;
+    [SerializeField] TextMeshProUGUI mitosisDNACostText;
+    [SerializeField] TextMeshProUGUI mitosisProteinCostText;
+    [SerializeField] TextMeshProUGUI mitosisATPCostText;
     bool evolveToggle = false;
     BuildPanel buildPanel;
     Cell displayedCell;
@@ -84,6 +85,7 @@ public class CellPanel : MonoBehaviour
         cellIcon.sprite = cellInfo.gameObject.GetComponent<SpriteRenderer>().sprite;
 
         cellLevelText.text = "Level: " + cellInfo.GetLevel();
+        cellDescription.text = cellInfo.GetDescription();
         upgradeDNACostText.text = "DNA: " + cellInfo.GetUpgradeCost();
         upgradeProteinCostText.text = "Protein: " + cellInfo.GetUpgradeCost();
         upgradeATPCostText.text = "ATP: " + cellInfo.GetUpgradeCost();

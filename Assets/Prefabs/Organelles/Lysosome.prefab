@@ -281,9 +281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Lysosome
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
+  description: Lysosomes breakdown worn-out organelles, pathogens and intruders,
+    and recycle nutrients in the process. Their the recycling centers of the cell.
+  buildDescription: Removes waste from the cell.
   level: 1
   cellLevelUnlockedAt: 1
   orgBuilt: 1
@@ -321,5 +321,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wasteRemovalAmount: 10
   wasteRemovalRate: 1
-  ATPUseRate: 1
+  ATPUseRate: 0.5
   running: 1

@@ -354,7 +354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Nucluoid
-  description: DESCRIBE THIS ORGANELLE.
+  description: Bacteria do not have a nucleus. Instead, their DNA is stored in one,
+    single double-stranded molecule.
   buildDescription: This is what this organelle does and why you should build more
     of it in your cell.
   level: 1
@@ -401,3 +402,4 @@ MonoBehaviour:
   maxWasteProductionRateMult: 1
   running: 1
   autoCollectResources: 1
+  productionUpgradeAmountMult: 0.25

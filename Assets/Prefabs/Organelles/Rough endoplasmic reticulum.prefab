@@ -211,9 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Rough endoplasmic reticulum
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
+  description: Attached to the surface of this organelle are ribosomes that work
+    together (along with the smooth endoplasmic reticulum) synthesize and modify
+    proteins and lipids.
+  buildDescription: Produces lots of protein through the ribosomes on its surface.
   level: 1
   cellLevelUnlockedAt: 1
   orgBuilt: 1
@@ -253,8 +254,9 @@ MonoBehaviour:
   productionAmount: 1
   productionRate: 1
   maxCapacity: 500
-  ATPUseRate: 1
+  ATPUseRate: 0.5
   wasteProductionAmount: 1
   maxWasteProductionRateMult: 0.25
   running: 1
   autoCollectResources: 1
+  productionUpgradeAmountMult: 0.25

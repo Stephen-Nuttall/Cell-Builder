@@ -197,9 +197,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Golgi Apparatus
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
+  description: The Gogi Apparatus is responsible for protein modification, sorting,
+    packaging for delivery to other parts of the cell.
+  buildDescription: Produces protein quickly.
   level: 1
   cellLevelUnlockedAt: 1
   orgBuilt: 1
@@ -239,8 +239,9 @@ MonoBehaviour:
   productionAmount: 1
   productionRate: 1
   maxCapacity: 500
-  ATPUseRate: 1
+  ATPUseRate: 0.5
   wasteProductionAmount: 1
   maxWasteProductionRateMult: 0.25
   running: 1
   autoCollectResources: 1
+  productionUpgradeAmountMult: 0.25

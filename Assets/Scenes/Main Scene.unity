@@ -8776,6 +8776,7 @@ MonoBehaviour:
   mitosisHandler: {fileID: 188924135}
   cellName: {fileID: 480830345}
   cellLevelText: {fileID: 2037016048}
+  cellDescription: {fileID: 1261242755}
   cellIcon: {fileID: 691755563}
   organellePanel: {fileID: 0}
   evolveButton: {fileID: 830069385}

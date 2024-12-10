@@ -196,7 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Large Central Vacuole
-  description: DESCRIBE THIS ORGANELLE.
+  description: Plants have large vacuoles that can swell to over 80% the cell's volume.
+    It stores water and nutrients, as well as remove waste.
   buildDescription: This is what this organelle does and why you should build more
     of it in your cell.
   level: 1
@@ -266,5 +267,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wasteRemovalAmount: 10
   wasteRemovalRate: 0.25
-  ATPUseRate: 0.5
+  ATPUseRate: 0.25
   running: 1

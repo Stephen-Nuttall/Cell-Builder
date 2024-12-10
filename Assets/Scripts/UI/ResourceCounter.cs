@@ -184,9 +184,9 @@ public class ResourceCounter : MonoBehaviour
             totalProtein = lastSaveData.protein;
             totalATP = lastSaveData.ATP;
 
-            maxDNA = lastSaveData.maxDNA;
-            maxProtein = lastSaveData.maxProtein;
-            maxATP = lastSaveData.maxATP;
+            // maxDNA = lastSaveData.maxDNA;
+            // maxProtein = lastSaveData.maxProtein;
+            // maxATP = lastSaveData.maxATP;
         }
     }
 

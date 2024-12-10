@@ -42,11 +42,20 @@ public class BuildOrgItem : MonoBehaviour
         buildButton.onClick.RemoveAllListeners();
     }
 
+    void Update()
+    {
+        DisplayOrganelle(referenceOrganelle);
+    }
+
     public void DisplayOrganelle(Organelle org)
     {
         referenceOrganelle = org;
 
-        if (org.CellLevelUnlockedAt() > org.GetParentCell().GetLevel())
+        if (org.GetParentCell().GetMaxOrganelles() <= org.GetParentCell().GetNumOrganellesBuilt())
+        {
+            ShowUpgradeCellMemInfo();
+        }
+        else if (org.CellLevelUnlockedAt() > org.GetParentCell().GetLevel())
         {
             ShowTooLowLevelInfo(org.CellLevelUnlockedAt());
         }

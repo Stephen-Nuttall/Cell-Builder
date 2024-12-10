@@ -184,9 +184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orgName: Mitochondrion
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
+  description: The powerhouse of the cell. Mitochondria produce energy through cellular
+    respiration.
+  buildDescription: Produces ATP at a fast rate but is more expensive to upgrade.
   level: 1
   cellLevelUnlockedAt: 1
   orgBuilt: 1
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceProduced: 2
-  productionAmount: 1
+  productionAmount: 2
   productionRate: 0.25
   maxCapacity: 500
   ATPUseRate: 0
@@ -231,3 +231,4 @@ MonoBehaviour:
   maxWasteProductionRateMult: 0.25
   running: 1
   autoCollectResources: 1
+  productionUpgradeAmountMult: 0.25

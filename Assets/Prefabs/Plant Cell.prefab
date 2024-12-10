@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellName: Plant Cell
-  description: DESCRIBE THIS ORGANELLE.
+  description: Plant cells are eukaryotic cells that produce energy through photosynthesis.
   evolution: 1
   cellLevel: 1
   upgradeCost: 150
@@ -453,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 2959670404278215787, guid: 28ef424818e095d46af7bea3b8901f4a, type: 3}
       propertyPath: m_Name
       value: Plant membrane and wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681041271283967320, guid: 28ef424818e095d46af7bea3b8901f4a, type: 3}
+      propertyPath: maxOrganelles
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7945108086355531503, guid: 28ef424818e095d46af7bea3b8901f4a, type: 3}
       propertyPath: m_LocalPosition.x
