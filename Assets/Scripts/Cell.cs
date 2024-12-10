@@ -16,7 +16,7 @@ public class Cell : MonoBehaviour
 
     ResourceCounter resourceCounter;
     float totalWaste = 0;
-    int id = 1;
+    int cellNum;
 
     List<Organelle> organelles = new();
     Sprite icon;
@@ -34,11 +34,14 @@ public class Cell : MonoBehaviour
     void Start()
     {
         warningBubble.SetActive(false);
-        FindOrganelles(gameObject.transform);
-        id = FindFirstObjectByType<MitosisHandler>().GetCellCount();
     }
 
     void OnDisable()
+    {
+        SaveToFile();
+    }
+
+    void OnApplicationQuit()
     {
         SaveToFile();
     }
@@ -147,14 +150,13 @@ public class Cell : MonoBehaviour
             return;
         }
 
-        id = data.id;
-        evolution = data.evolution;
+        cellNum = data.id;
         cellLevel = data.level;
         totalWaste = data.waste;
 
         if (data.orgList == null)
         {
-            Debug.LogError("Attempted to load saves for the organelles in cell #" + id +
+            Debug.LogError("Attempted to load saves for the organelles in cell #" + cellNum +
             ", but no organelle saves were found. Organelles in this cell will not be restored.");
             return;
         }
@@ -165,16 +167,16 @@ public class Cell : MonoBehaviour
         {
             if (i >= organelles.Count)
             {
-                Debug.LogError("Attempted to load save for organelle #" + i + " in cell #" + id
+                Debug.LogError("Attempted to load save for organelle #" + i + " in cell #" + cellNum
                 + " but that index is out of range of the organelle list for this cell.");
             }
             else if (organelles[i] == null)
             {
-                Debug.LogError("Attempted to load save for organelle #" + i + " in cell #" + id + " but it was not found.");
+                Debug.LogError("Attempted to load save for organelle #" + i + " in cell #" + cellNum + " but it was not found.");
             }
             else if (data.orgList[i] == null)
             {
-                Debug.LogError("Attempted to load save for organelle #" + i + " in cell #" + id + " but no save for it was found.");
+                Debug.LogError("Attempted to load save for organelle #" + i + " in cell #" + cellNum + " but no save for it was found.");
             }
             else
             {
@@ -188,6 +190,8 @@ public class Cell : MonoBehaviour
         FileReadWrite.WriteCellData(this);
     }
 
+    public void SetCellNumToLatest() { cellNum = FindFirstObjectByType<MitosisHandler>().GetCellCount(); }
+
     public string GetName() { return cellName; }
     public string GetDescription() { return description; }
     public int GetLevel() { return cellLevel; }
@@ -198,5 +202,5 @@ public class Cell : MonoBehaviour
     public float GetWasteLimit() { return wasteLimit; }
     public float GetMaxWaste() { return maxWaste; }
     public List<Organelle> GetOrganelles() { return organelles; }
-    public int GetID() { return id; }
+    public int GetID() { return cellNum; }
 }

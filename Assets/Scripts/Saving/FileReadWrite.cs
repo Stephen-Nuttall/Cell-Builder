@@ -72,4 +72,37 @@ public static class FileReadWrite
             return null;
         }
     }
+
+    public static SerializedCellData ReadCellData(CellEvolution evolution)
+    {
+        string path = evolution switch
+        {
+            CellEvolution.Bacteria => Application.persistentDataPath + "/" + "bacteriaDefault" + CellFileExtension,
+            CellEvolution.Plant => Application.persistentDataPath + "/" + "bacteriaDefault" + CellFileExtension,
+            CellEvolution.Animal => Application.persistentDataPath + "/" + "bacteriaDefault" + CellFileExtension,
+            _ => Application.persistentDataPath + "/" + "bacteriaDefault" + CellFileExtension,
+        };
+
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new();
+            FileStream stream = new(path, FileMode.Open);
+
+            SerializedCellData data = formatter.Deserialize(stream) as SerializedCellData;
+            stream.Close();
+
+            return data;
+        }
+        else
+        {
+            Debug.LogError("Save file for resource counts could not be loaded.");
+            return null;
+        }
+    }
+
+    public static bool CellDataExists(int id)
+    {
+        string path = Application.persistentDataPath + "/" + id + CellFileExtension;
+        return File.Exists(path);
+    }
 }

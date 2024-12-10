@@ -290,7 +290,7 @@ MonoBehaviour:
   buildResource: 0
   upgradeResource: 1
   buildCost: 100
-  upgradeCost: 250
+  upgradeCost: 50
   upgradeCostLevelMult: 2
   onLevelUp:
     m_PersistentCalls:
@@ -321,5 +321,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wasteRemovalAmount: 10
   wasteRemovalRate: 1
-  ATPUseRate: 2
+  ATPUseRate: 1
   running: 1

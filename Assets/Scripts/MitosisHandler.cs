@@ -72,20 +72,27 @@ public class MitosisHandler : MonoBehaviour
 
     void CreateCell(CellEvolution cellType)
     {
-        cellCount++;
-
+        GameObject newCell;
+        SerializedCellData cellData;
         if (cellType == CellEvolution.Bacteria)
         {
-            GameObject bacteriaObject = Instantiate(bacteriaCellPrefab, new Vector3(15 * cellCount, 0, 0), Quaternion.identity);
+            newCell = Instantiate(bacteriaCellPrefab, new Vector3(15 * cellCount, 0, 0), Quaternion.identity);
+            cellData = FileReadWrite.ReadCellData(CellEvolution.Bacteria);
         }
         else if (cellType == CellEvolution.Plant)
         {
-            GameObject plantObject = Instantiate(plantCellPrefab, new Vector3(15 * cellCount, 0, 0), Quaternion.identity);
+            newCell = Instantiate(plantCellPrefab, new Vector3(15 * cellCount, 0, 0), Quaternion.identity);
+            cellData = FileReadWrite.ReadCellData(CellEvolution.Plant);
         }
-        else if (cellType == CellEvolution.Animal)
+        else
         {
-            GameObject animalObject = Instantiate(animalCellPrefab, new Vector3(15 * cellCount, 0, 0), Quaternion.identity);
+            newCell = Instantiate(animalCellPrefab, new Vector3(15 * cellCount, 0, 0), Quaternion.identity);
+            cellData = FileReadWrite.ReadCellData(CellEvolution.Animal);
         }
+
+        newCell.GetComponent<Cell>().LoadFromFile(cellData);
+        newCell.GetComponent<Cell>().SetCellNumToLatest();
+        cellCount++;
     }
 
     public void ToggleEvolve()
@@ -111,4 +118,5 @@ public class MitosisHandler : MonoBehaviour
     public float GetEvolveProteinCost() { return evolveProteinCost; }
     public float GetEvolveATPCost() { return evolveATPCost; }
     public int GetCellCount() { return cellCount; }
+    public void IncrementCellCount() { cellCount++; }
 }

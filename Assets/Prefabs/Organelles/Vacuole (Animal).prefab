@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orgName: Vacuole
+  orgName: Small Vacuole
   description: DESCRIBE THIS ORGANELLE.
   buildDescription: This is what this organelle does and why you should build more
     of it in your cell.
@@ -204,7 +204,7 @@ MonoBehaviour:
   buildResource: 0
   upgradeResource: 1
   buildCost: 100
-  upgradeCost: 250
+  upgradeCost: 100
   upgradeCostLevelMult: 2
   onLevelUp:
     m_PersistentCalls:

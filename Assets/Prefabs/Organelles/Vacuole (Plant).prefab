@@ -205,7 +205,7 @@ MonoBehaviour:
   buildResource: 0
   upgradeResource: 1
   buildCost: 100
-  upgradeCost: 250
+  upgradeCost: 100
   upgradeCostLevelMult: 2
   onLevelUp:
     m_PersistentCalls:
@@ -246,9 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0a3f87140400b4c94a0df14c4def95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDNAIncreaseBase: 250
-  maxProteinIncreaseBase: 250
-  maxATPIncreaseBase: 250
+  maxDNAIncreaseBase: 150
+  maxProteinIncreaseBase: 150
+  maxATPIncreaseBase: 150
   maxDNALevelMult: 0.25
   maxProteinLevelMult: 0.25
   maxATPLevelMult: 0.25
@@ -266,5 +266,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wasteRemovalAmount: 10
   wasteRemovalRate: 0.25
-  ATPUseRate: 1
+  ATPUseRate: 0.5
   running: 1

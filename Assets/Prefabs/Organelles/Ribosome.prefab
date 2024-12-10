@@ -219,7 +219,7 @@ MonoBehaviour:
   buildResource: 0
   upgradeResource: 1
   buildCost: 10
-  upgradeCost: 250
+  upgradeCost: 25
   upgradeCostLevelMult: 2
   onLevelUp:
     m_PersistentCalls:

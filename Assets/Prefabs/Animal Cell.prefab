@@ -115,6 +115,7 @@ MonoBehaviour:
   description: DESCRIBE THIS ORGANELLE.
   evolution: 2
   cellLevel: 1
+  upgradeCost: 150
   wasteLimit: 50
   maxWaste: 100
   warningBubble: {fileID: 803961287986762022}

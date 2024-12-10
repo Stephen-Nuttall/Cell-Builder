@@ -201,7 +201,7 @@ MonoBehaviour:
   buildResource: 0
   upgradeResource: 1
   buildCost: 100
-  upgradeCost: 250
+  upgradeCost: 100
   upgradeCostLevelMult: 2
   onLevelUp:
     m_PersistentCalls:
@@ -234,7 +234,7 @@ MonoBehaviour:
   productionAmount: 1
   productionRate: 0.75
   maxCapacity: 500
-  ATPUseRate: 4
+  ATPUseRate: 2
   wasteProductionAmount: 1
   maxWasteProductionRateMult: 0.25
   running: 1

@@ -107,8 +107,9 @@ MonoBehaviour:
   description: DESCRIBE THIS ORGANELLE.
   evolution: 0
   cellLevel: 1
-  wasteLimit: 1
-  maxWaste: 0
+  upgradeCost: 50
+  wasteLimit: 1000
+  maxWaste: 1
   warningBubble: {fileID: 5736033928202450313}
 --- !u!1001 &2994334834338473821
 PrefabInstance:

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1427210384669003647}
   - component: {fileID: 8374120152981198584}
   - component: {fileID: 447248319660924603}
+  - component: {fileID: -1469459460377229660}
   m_Layer: 0
   m_Name: Bacteria membrane and wall
   m_TagString: Untagged
@@ -327,4 +328,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orgName: Cell Membrane and Wall
   description: DESCRIBE THIS ORGANELLE.
+  buildDescription: This is what this organelle does and why you should build more
+    of it in your cell.
   level: 1
+  cellLevelUnlockedAt: 1
+  orgBuilt: 1
+  buildResource: 0
+  upgradeResource: 1
+  buildCost: 100
+  upgradeCost: 25
+  upgradeCostLevelMult: 2
+  onLevelUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1469459460377229660}
+        m_TargetAssemblyTypeName: ResourceProducer, Assembly-CSharp
+        m_MethodName: OnLevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-1469459460377229660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724787189478048398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c6ce1a736eb854287af91529dd529a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceProduced: 2
+  productionAmount: 1
+  productionRate: 2
+  maxCapacity: 500
+  ATPUseRate: 0
+  wasteProductionAmount: 0
+  maxWasteProductionRateMult: 0.25
+  running: 1
+  autoCollectResources: 1

@@ -11,15 +11,15 @@ public class MainMenu : MonoBehaviour
     [SerializeField] string startButtonText = "Start";
     [SerializeField] string continueButtonText = "Continue";
     bool menuOpen = true;
-    
-    void Start()
+
+    void Awake()
     {
         EnableMenu();
 
         titleTextbox.text = gameTitleText;  // when the game starts, the title textbox should show the title of the game
         startContinueButtonTextbox.text = startButtonText;  // when the game starts, the continue button should be a start button
     }
-    
+
     void Update()
     {
         if (Input.GetKey("escape") && !menuOpen)
@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour
             startContinueButtonTextbox.text = continueButtonText;
         }
     }
-    
+
     void EnableMenu()
     {
         Time.timeScale = 0;  // pauses game logic
