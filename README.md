@@ -1,6 +1,6 @@
-# Cell Builders
+# Cell Builder
 
-Cell Builders is an educational game built to teach middle schoolers the basics about cells, organelles, and other concepts. Use resources produced by your organelles upgrade your cells and organelles, create new cells with mitosis, and evolve new types of cells.
+Cell Builder is an educational game built to teach middle schoolers the basics about cells, organelles, and other concepts. Use resources produced by your organelles upgrade your cells and organelles, create new cells with mitosis, and evolve new types of cells. This is a prototype for Cell Builder made by Stephen Nuttall and Justin Tarnowski for Software Engineering I at UMass Lowell with Dr. Daly
 
 Credit to the creators of the assets used can be found in resources.txt.
 
