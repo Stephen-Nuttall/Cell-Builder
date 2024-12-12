@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2236332932242446393}
   - component: {fileID: 8513107722444513984}
   - component: {fileID: -2717155213160651754}
+  - component: {fileID: 5907356442813483225}
   - component: {fileID: -1553220141719666455}
   m_Layer: 0
   m_Name: Mitochondrion
@@ -158,7 +159,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -1553220141719666455}
+        - m_Target: {fileID: 5907356442813483225}
           m_TargetAssemblyTypeName: Organelle, Assembly-CSharp
           m_MethodName: OrganelleClick
           m_Mode: 1
@@ -170,6 +171,45 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &5907356442813483225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421779708383977957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orgName: Mitochondrion
+  description: The powerhouse of the cell. Mitochondria produce energy through cellular
+    respiration.
+  buildDescription: Produces ATP at a fast rate but is more expensive to upgrade.
+  level: 1
+  cellLevelUnlockedAt: 1
+  orgBuilt: 1
+  buildResource: 0
+  upgradeResource: 1
+  buildCost: 75
+  upgradeCost: 75
+  upgradeCostLevelMult: 2
+  onLevelUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1553220141719666455}
+        m_TargetAssemblyTypeName: ResourceProducer, Assembly-CSharp
+        m_MethodName: OnLevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1553220141719666455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,20 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c6ce1a736eb854287af91529dd529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orgName: Mitochondrion
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
-  level: 1
-  cellLevelUnlockedAt: 1
-  unlocked: 1
-  buildResource: 0
-  upgradeResource: 1
-  buildCost: 75
-  upgradeCost: 250
-  upgradeCostLevelMult: 2
   resourceProduced: 2
-  productionAmount: 1
+  productionAmount: 2
   productionRate: 0.25
   maxCapacity: 500
   ATPUseRate: 0
@@ -203,3 +231,4 @@ MonoBehaviour:
   maxWasteProductionRateMult: 0.25
   running: 1
   autoCollectResources: 1
+  productionUpgradeAmountMult: 0.25

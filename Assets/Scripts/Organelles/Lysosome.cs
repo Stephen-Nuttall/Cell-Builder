@@ -1,18 +1,23 @@
 using System.Collections;
 using UnityEngine;
 
-public class Lysosome : Organelle
+public class Lysosome : MonoBehaviour
 {
-    [Header("Lysosome Info")]
     [SerializeField] float wasteRemovalAmount = 1f;
     [SerializeField] float wasteRemovalRate = 0.25f;
     [SerializeField] float ATPUseRate = 1f;
     [SerializeField] bool running = true;
+
+    float wasteUpgradeAmountMult = 0.1f;
+
     ResourceCounter resourceCounter;
+    Cell parentCell;
 
     void Start()
     {
         resourceCounter = FindFirstObjectByType<ResourceCounter>();
+        parentCell = GetComponent<Organelle>().GetParentCell();
+
         StartCoroutine(WasteRemovalLoop());
     }
 
@@ -28,4 +33,12 @@ public class Lysosome : Organelle
             yield return new WaitForSeconds(wasteRemovalRate);
         }
     }
+
+    public void OnLevelUp()
+    {
+        wasteRemovalAmount += wasteRemovalAmount * wasteUpgradeAmountMult;
+    }
+
+    public string GetRemovalRate() { return "Removes " + wasteRemovalAmount + " Waste every " + wasteRemovalRate + " second(s)"; }
+    public string GetNextRemovalRate() { return "+" + wasteRemovalAmount * wasteUpgradeAmountMult + " Waste every " + wasteRemovalRate + " second(s)"; }
 }

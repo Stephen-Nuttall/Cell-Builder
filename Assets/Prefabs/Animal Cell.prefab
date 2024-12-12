@@ -112,9 +112,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellName: Animal Cell
-  description: DESCRIBE THIS ORGANELLE.
+  description: Animal cells are eukaryotic cells that produce energy solely through
+    cellular respiration. They do not have a cell wall, giving them a more flexible
+    shape.
   evolution: 2
   cellLevel: 1
+  upgradeCost: 150
   wasteLimit: 50
   maxWaste: 100
   warningBubble: {fileID: 803961287986762022}
@@ -177,6 +180,10 @@ PrefabInstance:
     - target: {fileID: 4421779708383977957, guid: 97049c0671d8f2649bd178fde0a91fd6, type: 3}
       propertyPath: m_Name
       value: Mitochondrion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907356442813483225, guid: 97049c0671d8f2649bd178fde0a91fd6, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -248,6 +255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mitochondrion
       objectReference: {fileID: 0}
+    - target: {fileID: 5907356442813483225, guid: 97049c0671d8f2649bd178fde0a91fd6, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -269,6 +280,10 @@ PrefabInstance:
     - target: {fileID: 2860715469777813712, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_Name
       value: Ribosome
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: orgBuilt
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8300063616070165591, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -451,6 +466,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6168389705067158803, guid: 3898da12340107c4b9960cfe2c1d7f01, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8290328612170460783, guid: 3898da12340107c4b9960cfe2c1d7f01, type: 3}
       propertyPath: unlocked
       value: 0
@@ -539,6 +558,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6487201842795676374}
     m_Modifications:
+    - target: {fileID: 3146894314882745927, guid: cae5a4c2cb6d85b45804c4c63eb52a67, type: 3}
+      propertyPath: maxOrganelles
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4532457940106452597, guid: cae5a4c2cb6d85b45804c4c63eb52a67, type: 3}
       propertyPath: m_Name
       value: Animal membrane
@@ -723,6 +746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golgi Apparatus
       objectReference: {fileID: 0}
+    - target: {fileID: 6104338938216010914, guid: d7005cce910e0cc4c9654ca85ae68824, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -785,6 +812,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6168389705067158803, guid: 3898da12340107c4b9960cfe2c1d7f01, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8290328612170460783, guid: 3898da12340107c4b9960cfe2c1d7f01, type: 3}
       propertyPath: unlocked
       value: 0
@@ -811,6 +842,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6487201842795676374}
     m_Modifications:
+    - target: {fileID: -4686772000931391958, guid: d0105bd47aeb9da448bb3f998f0a13bc, type: 3}
+      propertyPath: orgBuilt
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4686772000931391958, guid: d0105bd47aeb9da448bb3f998f0a13bc, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1823941116308357562, guid: d0105bd47aeb9da448bb3f998f0a13bc, type: 3}
       propertyPath: unlocked
       value: 0
@@ -946,6 +985,10 @@ PrefabInstance:
     - target: {fileID: 2860715469777813712, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_Name
       value: Ribosome
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: orgBuilt
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8300063616070165591, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,0 +1,21 @@
+RESOURCES:
+
+Bacteria cell sprite - Stephen Nuttall
+Plant cell sprite - Stephen Nuttall
+Animal cell sprite - Stephen Nuttall
+Bacteria membrane sprite - Stephen Nuttall
+Plant membrane sprite - Stephen Nuttall
+Animal membrane sprite - Stephen Nuttall
+Chloroplast sprite - Stephen Nuttall
+Golgi Apparatus sprite - Stephen Nuttall
+Lyososome sprite - Stephen Nuttall
+Mitochondrion sprite - Stephen Nuttall
+Nucleoid sprite - Stephen Nuttall
+Nucleus sprite - Stephen Nuttall
+Ribosome sprite - Stephen Nuttall
+Rough endoplasmic reticulum sprite - Stephen Nuttall
+Vacuole sprite - Stephen Nuttall
+DNA icon - Stephen Nuttall
+Protein icon - Stephen Nuttall
+ATP icon - Stephen Nuttall
+Warning bubble icon - Stephen Nuttall

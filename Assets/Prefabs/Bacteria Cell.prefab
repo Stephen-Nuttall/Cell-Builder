@@ -104,11 +104,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellName: Bacteria Cell
-  description: DESCRIBE THIS ORGANELLE.
+  description: Bacteria are small, prokaryotic cells that lack a lot of the features
+    larger cells have.
   evolution: 0
   cellLevel: 1
-  wasteLimit: 1
-  maxWaste: 0
+  upgradeCost: 50
+  wasteLimit: 1000
+  maxWaste: 1
   warningBubble: {fileID: 5736033928202450313}
 --- !u!1001 &2994334834338473821
 PrefabInstance:
@@ -133,6 +135,14 @@ PrefabInstance:
     - target: {fileID: 2860715469777813712, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: cellLevelUnlockedAt
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8300063616070165591, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -456,6 +466,14 @@ PrefabInstance:
     - target: {fileID: 2860715469777813712, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: orgBuilt
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808067852931277740, guid: 7e233291278d2724186c236891d0e43c, type: 3}
+      propertyPath: unlocked
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8300063616070165591, guid: 7e233291278d2724186c236891d0e43c, type: 3}
       propertyPath: m_LocalPosition.x

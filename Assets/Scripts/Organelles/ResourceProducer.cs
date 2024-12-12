@@ -1,9 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class ResourceProducer : Organelle
+public class ResourceProducer : MonoBehaviour
 {
-    [Header("Resource Production Info")]
     [SerializeField] ResourceType resourceProduced;
     [SerializeField] float productionAmount = 10f;
     [SerializeField] float productionRate = 1f;  // in seconds.
@@ -13,12 +12,17 @@ public class ResourceProducer : Organelle
     [SerializeField] float maxWasteProductionRateMult = 0.25f;
     [SerializeField] bool running = true;
     [SerializeField] bool autoCollectResources = true;
+    [SerializeField] float productionUpgradeAmountMult = 0.25f;
     float storedAmount;
+
     ResourceCounter resourceCounter;
+    Cell parentCell;
 
     void Start()
     {
         resourceCounter = FindFirstObjectByType<ResourceCounter>();
+        parentCell = GetComponent<Organelle>().GetParentCell();
+
         StartCoroutine(ProductionTimer());
     }
 
@@ -100,8 +104,14 @@ public class ResourceProducer : Organelle
         }
     }
 
+    public void OnLevelUp()
+    {
+        productionAmount += productionAmount * productionUpgradeAmountMult;
+    }
+
     public float GetStoredAmount() { return storedAmount; }
     public float GetMaxCapacity() { return maxCapacity; }
     public string GetProductionRate() { return productionAmount + " " + GetResourceType() + " every " + productionRate + " second(s)"; }
+    public string GetNextProductionRate() { return "+" + productionAmount * productionUpgradeAmountMult + " " + GetResourceType() + " every " + productionRate + " second(s)"; }
     public bool IsAutoCollectEnabled() { return autoCollectResources; }
 }

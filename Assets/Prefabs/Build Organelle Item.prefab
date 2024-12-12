@@ -566,6 +566,14 @@ MonoBehaviour:
   lockedInfoPanel: {fileID: 7541547147790504889}
   lockedHeadingText: {fileID: 6982492072829402596}
   lockedDescriptionText: {fileID: 3895493591539379027}
+  tooLowLevelHeading: LOCKED
+  tooLowLevelDescription: 'Your cell is not high enough level to build this organelle.
+    Your cell must be at least level '
+  upgradeCellMemHeading: LOCKED
+  upgradeCellMemDescription: Your cell membrane can't hold this many organelles!
+    Upgrade your cell membrane.
+  purchasedHeading: PURCHASED
+  purchasedDescription: You have already built this organelle!
   orgIcon: {fileID: 8156000033131878268}
 --- !u!1 &2713036219816426880
 GameObject:

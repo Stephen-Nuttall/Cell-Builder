@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4400993374354833208}
   - component: {fileID: -7517181537119628929}
   - component: {fileID: 324086374941349361}
+  - component: {fileID: 6168389705067158803}
   - component: {fileID: 8290328612170460783}
   m_Layer: 0
   m_Name: Lysosome
@@ -255,7 +256,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8290328612170460783}
+        - m_Target: {fileID: 6168389705067158803}
           m_TargetAssemblyTypeName: Organelle, Assembly-CSharp
           m_MethodName: OrganelleClick
           m_Mode: 1
@@ -267,6 +268,45 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &6168389705067158803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755045410841371481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10df6fb06bd86ca4e80386f11aa9e463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orgName: Lysosome
+  description: Lysosomes breakdown worn-out organelles, pathogens and intruders,
+    and recycle nutrients in the process. Their the recycling centers of the cell.
+  buildDescription: Removes waste from the cell.
+  level: 1
+  cellLevelUnlockedAt: 1
+  orgBuilt: 1
+  buildResource: 0
+  upgradeResource: 1
+  buildCost: 100
+  upgradeCost: 50
+  upgradeCostLevelMult: 2
+  onLevelUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8290328612170460783}
+        m_TargetAssemblyTypeName: Lysosome, Assembly-CSharp
+        m_MethodName: OnLevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8290328612170460783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,19 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc1cd8590acd37488c0f6357b748beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orgName: ORGANELLE
-  description: DESCRIBE THIS ORGANELLE.
-  buildDescription: This is what this organelle does and why you should build more
-    of it in your cell.
-  level: 1
-  cellLevelUnlockedAt: 1
-  unlocked: 1
-  buildResource: 0
-  upgradeResource: 1
-  buildCost: 75
-  upgradeCost: 250
-  upgradeCostLevelMult: 2
   wasteRemovalAmount: 10
   wasteRemovalRate: 1
-  ATPUseRate: 2
+  ATPUseRate: 0.5
   running: 1
